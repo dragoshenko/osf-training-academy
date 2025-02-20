@@ -26,11 +26,6 @@
         <isslot id="home-product-set-m" description="Link to a Product Set." context="global" />
     </div>
 
-    <!-- Add your name here -->
-    <div class="home-name">
-    <p>${Resource.msg('greeting.message', 'homePage', null)}</p>
-</div>
-
     <div class="home-email-signup">
         <div class="container">
             <form role="form">
