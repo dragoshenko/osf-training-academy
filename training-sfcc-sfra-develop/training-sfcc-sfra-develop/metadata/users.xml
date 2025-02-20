@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users xmlns="http://www.demandware.com/xml/impex/user/2007-09-05">
+    <user login="ionascudragos340@yahoo.com" enabled-flag="true">
+        <credentials>
+            <external-id>8d96c279-3dbb-49a1-b750-c50cfc063452</external-id>
+        </credentials>
+        <profile>
+            <first-name>Dragos</first-name>
+            <last-name>Ionascu</last-name>
+            <email>ionascudragos340@yahoo.com</email>
+        </profile>
+    </user>
+
+</users>
