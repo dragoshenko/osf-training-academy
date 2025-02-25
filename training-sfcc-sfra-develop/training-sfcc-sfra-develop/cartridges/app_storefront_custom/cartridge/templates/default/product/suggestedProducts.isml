@@ -1,10 +1,12 @@
-
-<isloop items="${pdict.suggestedProducts}" var="suggestedProduct">
-    <div class="product-tile">
-        <h3>
-            <a href="${suggestedProduct.url}">${suggestedProduct.name}</a>
-        </h3>
-        <img src="${suggestedProduct.imageURL}" alt="${suggestedProduct.name}" />
-        <p>${suggestedProduct.price}</p>
-    </div>
-</isloop>
+<link rel="stylesheet" type="text/css" href="${URLUtils.staticURL('/css/detail.css')}" />
+<div class="product-tile-container">
+    <isloop items="${pdict.suggestedProducts}" var="suggestedProduct">
+        <div class="product-tile">
+            <h3>
+                <a href="${suggestedProduct.url}">${suggestedProduct.name}</a>
+            </h3>
+            <img src="${suggestedProduct.imageURL}" alt="${suggestedProduct.name}" />
+            <p>${suggestedProduct.price}</p>
+        </div>
+    </isloop>
+</div>

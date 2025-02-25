@@ -139,12 +139,8 @@
             <isset name="loopState" value="${{count: 1}}" scope="page" />
             <isinclude template="product/components/descriptionAndDetails" />
             <div class="suggested-products">
-            <h2>${Resource.msg('label.suggestedProducts', 'app_storefront_custom', null)}</h2>
-            <ul>
-                <isloop items="${pdict.suggestedProducts}" var="suggestedProduct">
-                    <li>${suggestedProduct.name}</li>
-                </isloop>
-            </ul>
+            <h2>${Resource.msg('Suggested Products', 'app_storefront_custom', null)}</h2>
+            <isinclude template="product/suggestedProducts" />
         </div>
 
             <div class="recommendations">
