@@ -1,0 +1,5 @@
+<div class="suggested-products">
+    <isloop items="${pdict.suggestedProducts}" var="suggestedProduct">
+        <isinclude template="product/components/productTile" context="suggestedProduct" />
+    </isloop>
+</div>
