@@ -350,59 +350,62 @@ server.get('ShowBonusProducts', function (req, res, next) {
 
 server.append('Show', function (req, res, next) {
     var ProductMgr = require('dw/catalog/ProductMgr');
-    var URLUtils = require('dw/web/URLUtils');
-    var Logger = require('dw/system/Logger');
+var CatalogMgr = require('dw/catalog/CatalogMgr');
+var ProductSearchModel = require('dw/catalog/ProductSearchModel');
+var URLUtils = require('dw/web/URLUtils');
+var Logger = require('dw/system/Logger');
+var ProductSearch = require('*/cartridge/models/search/productSearch')
+var productId = res.getViewData().product.id;
+var product = ProductMgr.getProduct(productId);
+var suggestedProducts = [];
 
-    var productId = res.getViewData().product.id;
-    var product = ProductMgr.getProduct(productId);
-    var suggestedProducts = [];
+if (product && product.isCategorized()) {
+    var apiProductSearch = new ProductSearchModel();
+    apiProductSearch.setCategoryID(product.getPrimaryCategory().ID);
+    apiProductSearch.search();
 
-    if (product && product.isCategorized()) {
-        var CatalogMgr = require('dw/catalog/CatalogMgr');
-        var ProductSearchModel = require('dw/catalog/ProductSearchModel');
-        var ProductSearch = require('*/cartridge/models/search/productSearch');
+    var productSearch = new ProductSearch(
+        apiProductSearch,
+        req.querystring,
+        req.querystring.srule,
+        CatalogMgr.getSortingOptions(),
+        CatalogMgr.getSiteCatalog().getRoot()
+    );
 
-        var apiProductSearch = new ProductSearchModel();
-        apiProductSearch.setCategoryID(product.getPrimaryCategory().ID);
-        apiProductSearch.search();
+    for (var index = 0; index < 4 && index < productSearch.productIds.length; index++) {
+        var suggestedProductId = productSearch.productIds[index].productID;
+        var suggestedProduct = ProductMgr.getProduct(suggestedProductId);
 
-        var productSearch = new ProductSearch(apiProductSearch,
-            req.querystring,
-            req.querystring.srule,
-            CatalogMgr.getSortingOptions(),
-            CatalogMgr.getSiteCatalog().getRoot());
+        if (suggestedProduct) {
+            // Retrieve image
+            var image = suggestedProduct.getImage('medium', 0);
+            var imageURL = image ? image.getURL().toString() : '/path/to/default/image.jpg';
 
-        for (var index = 0; index < 4 && index < productSearch.productIds.length; index++) {
-            var suggestedProductId = productSearch.productIds[index].productID;
-            var suggestedProduct = ProductMgr.getProduct(suggestedProductId);
+            // Retrieve price
+            var price = suggestedProduct.priceModel && suggestedProduct.priceModel.price
+                ? suggestedProduct.priceModel.price.toFormattedString()
+                : 'N/A';
 
-            if (suggestedProduct) {
-                // Attempt to retrieve the image
-                var image = suggestedProduct.getImage('medium', 0);
-                var imageURL = image ? image.getURL().toString() : '/path/to/default/image.jpg';
+            var productURL = URLUtils.url('Product-Show', 'pid', suggestedProduct.ID).toString();
 
-                // Attempt to retrieve the price
-                var price = suggestedProduct.priceModel ? suggestedProduct.priceModel.price.toFormattedString() : 'Price not available';
+            suggestedProducts.push({
+                uuid: suggestedProduct.UUID,
+                name: suggestedProduct.name,
+                imageURL: imageURL,
+                price: price,
+                url: productURL
+            });
 
-                var productURL = URLUtils.url('Product-Show', 'pid', suggestedProduct.ID).toString();
-
-                suggestedProducts.push({
-                    name: suggestedProduct.name,
-                    imageURL: imageURL,
-                    price: price,
-                    url: productURL
-                });
-
-                // Log the suggested product details for debugging
-                Logger.info('Suggested Product: {0}', JSON.stringify(suggestedProducts[suggestedProducts.length - 1]));
-            }
+            // Log the suggested product details for debugging
+            Logger.info('Suggested Product: {0}', JSON.stringify(suggestedProducts[suggestedProducts.length - 1]));
         }
     }
+}
 
-    res.setViewData({
-        suggestedProducts: suggestedProducts
-    });
-    next();
+res.setViewData({
+    suggestedProducts: suggestedProducts
+});
+next();
 });
 
 module.exports = server.exports();

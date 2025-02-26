@@ -5,5 +5,13 @@
         "uploadedFiles": 904,
         "indexingId": "5136cd34cf68a44d1a2f1db335700e15639496eddd7ad32ecedba6a9b108b33c"
     },
-    "extension.prophet.sitecontext.selectedSiteID": ""
+    "extension.prophet.sitecontext.selectedSiteID": "",
+    "osfdigital.wingman.knowledgeBaseSettings": {
+        "salesforceDevEnabled": false,
+        "salesforceHelpEnabled": false,
+        "indexedWorkspaceEnabled": true,
+        "omsSearchEnabled": false,
+        "composableEnabled": false,
+        "sfccEnabled": false
+    }
 }
