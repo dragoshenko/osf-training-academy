@@ -6,3 +6,13 @@
     </folder>
 
 </library>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="RefArchSharedLibrary">
+<content content-id="cartTotalThresholdMessage">
+<online-flag>true</online-flag>
+<searchable-flag>false</searchable-flag>
+<custom-attributes>
+<custom-attribute attribute-id="body" xml:lang="x-default"><p><span class="marker"><span style="font-size:16px;"></span></span><span style="font-size:16px;"><span class="marker"><span style="background-color:#f39c12;">Your cart total exceeds $200!</span></span></span></p></custom-attribute>
+</custom-attributes>
+<folder-links> </folder-links>
+</content>
+</library>
