@@ -6,3 +6,13 @@
     </folder>
 
 </library>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="RefArchSharedLibrary">
+<content content-id="homeBanner">
+<online-flag>true</online-flag>
+<searchable-flag>false</searchable-flag>
+<custom-attributes>
+<custom-attribute attribute-id="body" xml:lang="x-default"><p style="text-align: center;"><span style="font-size:36px;"></span><span style="font-size:26px;">Doggo View</span></p> <p style="text-align:center"><img alt="" height="519" src="Screenshot_540.png?$staticlink$" title="" width="615" /></p></custom-attribute>
+</custom-attributes>
+<folder-links> </folder-links>
+</content>
+</library>
