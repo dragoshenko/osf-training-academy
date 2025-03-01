@@ -6,3 +6,14 @@
     </folder>
 
 </library>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="RefArchSharedLibrary">
+<content content-id="sizeTable">
+<display-name xml:lang="x-default">Size Guide Table</display-name>
+<online-flag>true</online-flag>
+<searchable-flag>false</searchable-flag>
+<custom-attributes>
+<custom-attribute attribute-id="body" xml:lang="x-default"><table border="0" cellpadding="1" cellspacing="1" style="width: 650px;"> <tbody> <tr> <td style="text-align: left;">Tops (Chest)</td> <td style="text-align: left;">XS</td> <td style="text-align: left;">S</td> <td style="text-align: left;">M</td> <td style="text-align: left;">L</td> <td style="text-align: left;">XL</td> <td style="text-align: left;">XXL</td> </tr> <tr> <td>Adidas</td> <td>31-33''</td> <td>34-37''</td> <td>37-40''</td> <td>40-44''</td> <td>44-48''</td> <td>47-52''</td> </tr> <tr> <td>Canterbury</td> <td>-</td> <td>37-39''</td> <td>39-41''</td> <td>41-43''</td> <td>43-45''</td> <td>46-48''</td> </tr> <tr> <td>New Balance</td> <td>-</td> <td>37-39''</td> <td>39-41''</td> <td>41-43''</td> <td>45-47''</td> <td>49-51''</td> </tr> <tr> <td>Nike</td> <td>-</td> <td>35-38''</td> <td>38-41''</td> <td>41-44''</td> <td>44-49''</td> <td>49-54''</td> </tr> </tbody> </table> <p>&nbsp;</p></custom-attribute>
+</custom-attributes>
+<folder-links> </folder-links>
+</content>
+</library>
