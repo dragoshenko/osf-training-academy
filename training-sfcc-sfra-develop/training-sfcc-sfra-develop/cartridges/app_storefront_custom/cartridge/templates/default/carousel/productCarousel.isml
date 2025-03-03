@@ -1,0 +1,34 @@
+<link rel="stylesheet" type="text/css" href="${URLUtils.staticURL('/css/carousel.css')}" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<div class="product-list">
+<script>
+    $(document).ready(function(){
+        $('.product-list').slick({
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    });
+</script>
+    <isloop items="${pdict.ProductList}" var="product">
+        <div class="product-item">
+            <img src="${product.imageURL}" alt="${product.name}" />
+            <div class="product-details">
+                <a href="${product.url}">${product.name}</a>
+                <p>${product.price}</p>
+            </div>
+        </div>
+    </isloop>
+</div>
+
+<isslot id="productCarouselSlot" description="Product Carousel Slot" context="global">
