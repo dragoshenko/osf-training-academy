@@ -8,7 +8,6 @@
     <!-- +1.888.555.0199 --><!--This phone is a requirement to support existing Gomez monitor of SiteGenesis. Demandware customers can remove this.-->
  
     <div class="product-carousel">
-    <h2>${Resource.msg('Suggested Products', 'app_storefront_custom', null)}</h2>
     <isinclude template="carousel/productCarousel.isml" />
     </div>
     
