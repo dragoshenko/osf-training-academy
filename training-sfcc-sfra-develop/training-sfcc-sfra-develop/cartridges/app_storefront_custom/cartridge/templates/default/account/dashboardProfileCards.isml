@@ -11,8 +11,6 @@
         <!---Address Book--->
         <isinclude template="account/addressBookCard"/>
 
-        <!---Shipping Book--->
-        <isinclude template="account/shippingBookCard"/>
     </div>
     <div class="col-sm-6">
         <!---Order History--->
