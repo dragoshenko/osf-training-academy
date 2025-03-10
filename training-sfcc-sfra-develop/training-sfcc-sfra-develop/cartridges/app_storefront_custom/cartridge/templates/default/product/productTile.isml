@@ -1,0 +1,34 @@
+<isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addCss('/static/default/css/badge.css');
+    </isscript>
+<div class="product-tile">
+    <!-- dwMarker="product" dwContentID="${product.uuid}" -->
+    <isinclude template="product/components/productTileImage" />
+    <div class="product-badge" style="position: absolute; top: 0; left: 0; width: 70px; height: 70px; border-radius: 50%; background-color:rgb(245, 11, 11); color: #FFFFFF; display: flex; align-items: center; justify-content: center;">
+    Test Badge
+</div>
+
+    <div class="tile-body">
+        <isif condition="${pdict.display.swatches !== false}">
+            <isinclude template="product/components/productTileSwatch" />
+        </isif>
+
+        <isinclude template="product/components/productTileName" />
+        
+
+        <isset name="price" value="${product.price}" scope="page" />
+        <isif condition="${product.productType === 'set'}">
+            <isinclude template="product/components/pricing/setPrice" />
+        <iselse>
+            <isinclude template="product/components/pricing/main" />
+        </isif>
+
+        <isif condition="${pdict.display.ratings !== false}">
+            <isinclude template="product/productTileFooter" />
+        </isif>
+    <isprint value="${category.ID}" />
+    <isprint value="${category.custom.backgroundColor}" />
+    </div>
+    <!-- END_dwmarker -->
+</div>
