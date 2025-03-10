@@ -49,4 +49,33 @@
            range-error="error.message.150orless">
         <description>You have 150 characters left out of 150</description>
     </field>
+
+    <!-- Card Number -->
+    <field formid="cardNumber" label="label.input.cardnumber" type="string" mandatory="true"
+           max-length="16" min-length="16" missing-error="payment.cardnumber.missing"
+           range-error="payment.cardnumber.invalid" parse-error="payment.cardnumber.parseerror"/>
+
+    <!-- Expiration Month -->
+    <field formid="expirationMonth" label="label.input.expirationmonth" type="integer" mandatory="true"
+           min-value="1" max-value="12" missing-error="payment.expirationmonth.missing"
+           range-error="payment.expirationmonth.invalid"/>
+
+    <!-- Expiration Year -->
+    <field formid="expirationYear" label="label.input.expirationyear" type="integer" mandatory="true"
+           min-value="2025" max-value="2040" missing-error="payment.expirationyear.missing"
+           range-error="payment.expirationyear.invalid"/>
+
+    <!-- Security Code -->
+    <field formid="securityCode" label="label.input.securitycode" type="string" mandatory="true"
+           max-length="3" min-length="3" missing-error="payment.securitycode.missing"
+           range-error="payment.securitycode.invalid" parse-error="payment.securitycode.parseerror"/>
+
+    <!-- Email -->
+    <field formid="email" label="label.input.email" type="string" mandatory="true"
+           max-length="100" missing-error="payment.email.missing"
+           range-error="payment.email.invalid" parse-error="payment.email.parseerror"/>
+
+    <!-- Existing actions and other fields -->
+
+
 </form>
