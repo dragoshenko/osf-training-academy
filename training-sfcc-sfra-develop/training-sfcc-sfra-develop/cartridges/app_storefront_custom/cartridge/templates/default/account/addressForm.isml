@@ -1,0 +1,303 @@
+<form
+    action="${URLUtils.url('Address-SaveAddress', 'addressId', pdict.addressId)}"
+    class="address-form"
+    method="POST"
+    <isprint value="${pdict.addressForm.attributes}" encoding="off" />>
+   
+
+    <!-- Name -->
+    <div class="row">
+        <!-- First Name -->
+        <div class="col-6">
+            <div class="form-group
+                ${pdict.addressForm.firstName.mandatory === true ? 'required' : ''}">
+                <label class="form-control-label" for="firstName">
+                    <isprint value="${pdict.addressForm.firstName.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control" id="firstName"
+                    <isprint value="${pdict.addressForm.firstName.attributes}" encoding="off" />
+                    autocomplete="given-name">
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+
+        <!-- Last Name -->
+        <div class="col-6">
+            <div class="form-group
+                ${pdict.addressForm.lastName.mandatory === true ? 'required' : ''}">
+                <label class="form-control-label" for="lastName">
+                    <isprint value="${pdict.addressForm.lastName.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control" id="lastName"
+                    <isprint value="${pdict.addressForm.lastName.attributes}" encoding="off" />
+                    autocomplete="family-name">
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Address 1 -->
+    <div class="form-group
+        ${pdict.addressForm.address1.mandatory === true ? 'required' : ''}">
+        <label class="form-control-label" for="address1">
+            <isprint value="${pdict.addressForm.address1.label}" encoding="htmlcontent" />
+        </label>
+        <input type="text" class="form-control" id="address1"
+            <isprint value="${pdict.addressForm.address1.attributes}" encoding="off" />
+            autocomplete="address-line1">
+        <div class="invalid-feedback"></div>
+    </div>
+
+    <!-- Address 2 -->
+    <div class="form-group
+        ${pdict.addressForm.address2.mandatory === true ? 'required' : ''}">
+        <label class="form-control-label" for="address2">
+            <isprint value="${pdict.addressForm.address2.label}" encoding="htmlcontent" />
+        </label>
+        <input type="text" class="form-control" id="address2"
+            <isprint value="${pdict.addressForm.address2.attributes}" encoding="off" />
+            autocomplete="billing address-line2">
+        <div class="invalid-feedback"></div>
+    </div>
+
+    <!-- Country and State drop downs -->
+    <div class="row">
+        <!-- Country  -->
+        <div class="col-6">
+            <div class="form-group
+                ${pdict.addressForm.country.mandatory === true ? 'required' : ''}">
+                <label class="form-control-label" for="country">
+                    <isprint value="${pdict.addressForm.country.label}" encoding="htmlcontent" />
+                </label>
+                <select class="form-control" id="country"
+                    <isprint value="${pdict.addressForm.country.attributes}" encoding="off" />
+                    autocomplete="country">
+                    <isloop items=${pdict.addressForm.country.options} var="country">
+                        <option id="${country.id}" value="${country.htmlValue}" <isif condition="${country.selected}">selected</isif>>${country.label}</option>
+                    </isloop>
+                </select>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+
+        <!-- State  -->
+        <div class="col-6">
+            <div class="form-group
+                ${pdict.addressForm.states.stateCode.mandatory === true ? 'required' : ''}">
+                <label class="form-control-label" for="state">
+                    <isprint value="${pdict.addressForm.states.stateCode.label}" encoding="htmlcontent" />
+                </label>
+                <select class="form-control" id="state"
+                    <isprint value="${pdict.addressForm.states.stateCode.attributes}" encoding="off" />
+                    autocomplete="address-level1">
+                    <isloop items=${pdict.addressForm.states.stateCode.options} var="state">
+                        <option id="${state.id}" value="${state.htmlValue}" <isif condition="${state.selected}">selected</isif>>${state.label || ' '}</option>
+                    </isloop>
+                </select>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- City and ZIP -->
+    <div class="row">
+        <div class="col-6">
+        <!-- City  -->
+            <div class="form-group
+                ${pdict.addressForm.city.mandatory === true ? 'required' : ''}">
+                <label class="form-control-label" for="city">
+                    <isprint value="${pdict.addressForm.city.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control" id="city"
+                    <isprint value="${pdict.addressForm.city.attributes}" encoding="off" />
+                    autocomplete="address-level2">
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+
+        <!-- ZIP Code -->
+        <div class="col-6">
+            <div class="form-group
+                ${pdict.addressForm.postalCode.mandatory === true ? 'required' : ''}">
+                <label class="form-control-label" for="zipCode">
+                    <isprint value="${pdict.addressForm.postalCode.label}" encoding="htmlcontent" />
+                </label>
+                <input type="text" class="form-control" id="zipCode"
+                    <isprint value="${pdict.addressForm.postalCode.attributes}" encoding="off" />
+                    autocomplete="postal-code">
+                <div class="invalid-feedback"></div>
+                ${Resource.msg('Example: 012345','account',null)}
+            </div>
+        </div>
+    </div>
+
+    <!-- Phone Number -->
+    <div class="form-group
+        ${pdict.addressForm.phone.mandatory === true ? 'required' : ''}">
+        <label class="form-control-label" for="phone">
+            <isprint value="${pdict.addressForm.phone.label}" encoding="htmlcontent" />
+        </label>
+        <input type="text" class="form-control" id="phone"
+            <isprint value="${pdict.addressForm.phone.attributes}" encoding="off" />
+            autocomplete="tel">
+        <div class="invalid-feedback"></div>
+        ${Resource.msg('Example: 0777 123 456','account',null)}
+    </div>
+
+    <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+
+    <!-- Comments Field -->
+    <div class="form-group">
+        <label class="form-control-label" for="comments">
+            ${Resource.msg('label.input.comments','forms',null)}
+        </label>
+        <textarea id="comments" name="comments" class="form-control" maxlength="150" oninput="updateCharacterCount()"></textarea>
+        <p id="charCount"></p>
+    </div>
+
+    <!-- Payment Information -->
+    <h3>${Resource.msg('label.payment.info','forms',null)}</h3>
+
+    <!-- Card Number -->
+    <div class="form-group required">
+        <label class="form-control-label" for="cardNumber">
+            ${Resource.msg('label.card.number','forms',null)}
+        </label>
+        <input type="text" class="form-control" id="cardNumber"
+            <isprint value="${pdict.paymentForm.cardNumber.attributes}" encoding="off" />
+            autocomplete="cc-number" required oninput="validateCardNumber()">
+        ${Resource.msg('Card number must contain exactly 16 digits.','account',null)}
+    </div>
+
+    <!-- Expiration Date -->
+    <div class="row">
+        <!-- Expiration Month -->
+        <div class="col-6">
+            <div class="form-group required">
+                <label class="form-control-label" for="expirationMonth">
+                    ${Resource.msg('label.expiration.month','forms',null)}
+                </label>
+                <select class="form-control" id="expirationMonth" autocomplete="cc-exp-month" required>
+                    <option value="">Select Month</option>
+                    <isloop items="${[1,2,3,4,5,6,7,8,9,10,11,12]}" var="month">
+                        <option value="${month.toString()}">${month.toString()}</option>
+                    </isloop>
+                </select>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+
+        <!-- Expiration Year -->
+        <div class="col-6">
+            <div class="form-group required">
+                <label class="form-control-label" for="expirationYear">
+                    ${Resource.msg('label.expiration.year','forms',null)}
+                </label>
+                <select class="form-control" id="expirationYear" autocomplete="cc-exp-year" required>
+                    <option value="">Select Year</option>
+                    <isloop items="${[2025,2026,2027,2028,2029,2030,2031,2032,2033,2034,2035,2036,2037,2038,2039,2040]}" var="year">
+                        <option value="${year.toString()}">${year.toString()}</option>
+                    </isloop>
+                </select>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Security Code -->
+    <div class="form-group required">
+        <label class="form-control-label" for="securityCode">
+            ${Resource.msg('label.security.code','forms',null)}
+        </label>
+        <input type="text" class="form-control" id="securityCode"
+            <isprint value="${pdict.paymentForm.securityCode.attributes}" encoding="off" />
+            autocomplete="cc-csc" required oninput="validateSecurityCode()">
+        ${Resource.msg('Security code number must contain exactly 3 digits.','account',null)}
+    </div>
+
+    <!-- Email -->
+    <div class="form-group required">
+        <label class="form-control-label" for="email">
+            ${Resource.msg('label.email','forms',null)}
+        </label>
+        <input type="email" class="form-control" id="email"
+            <isprint value="${pdict.paymentForm.email.attributes}" encoding="off" />
+            autocomplete="email" required>
+        <div class="invalid-feedback"></div>
+    </div>
+
+    <!-- Cancel, Save, and Scroll to Top Buttons -->
+    <div class="row">
+        <div class="col-4">
+            <a href="${URLUtils.url('Address-List')}" class="btn btn-block btn-outline-primary">${Resource.msg('button.cancel','account',null)}</a>
+        </div>
+        <div class="col-4">
+            <button type="submit" name="save" class="btn btn-save btn-block btn-primary" id="saveButton" disabled>${Resource.msg('button.save','account',null)}</button>
+        </div>
+        <div class="col-4">
+            <button type="button" class="btn btn-block btn-secondary" onclick="scrollToTop()">Scroll to Top</button>
+        </div>
+    </div>
+
+</form>
+
+<script>
+function updateCharacterCount() {
+    const textarea = document.getElementById('comments');
+    const charCount = document.getElementById('charCount');
+    const maxLength = textarea.getAttribute('maxlength');
+    const currentLength = textarea.value.length;
+    const charactersLeft = maxLength - currentLength;
+
+    // Use a template string to replace placeholders with actual values
+    const messageTemplate = '${Resource.msg('message.characters.left','forms',null)}';
+    const message = messageTemplate.replace('{0}', charactersLeft).replace('{1}', maxLength);
+
+    charCount.textContent = message;
+}
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function validateSecurityCode() {
+    const securityCodeInput = document.getElementById('securityCode');
+    const securityCode = securityCodeInput.value;
+    const saveButton = document.getElementById('saveButton');
+
+    if (securityCode.length === 3 && /^\d{3}$/.test(securityCode)) {
+        securityCodeInput.style.borderColor = ''; // Reset to default
+    } else {
+        securityCodeInput.style.borderColor = 'red'; // Set border to red
+    }
+
+    validateForm();
+}
+
+function validateCardNumber() {
+    const cardNumberInput = document.getElementById('cardNumber');
+    const cardNumber = cardNumberInput.value;
+    const saveButton = document.getElementById('saveButton');
+
+    if (cardNumber.length === 16 && /^\d{16}$/.test(cardNumber)) {
+        cardNumberInput.style.borderColor = ''; // Reset to default
+    } else {
+        cardNumberInput.style.borderColor = 'red'; // Set border to red
+    }
+
+    validateForm();
+}
+
+function validateForm() {
+    const securityCodeInput = document.getElementById('securityCode');
+    const cardNumberInput = document.getElementById('cardNumber');
+    const saveButton = document.getElementById('saveButton');
+
+    if (securityCodeInput.value.length === 3 && /^\d{3}$/.test(securityCodeInput.value) &&
+        cardNumberInput.value.length === 16 && /^\d{16}$/.test(cardNumberInput.value)) {
+        saveButton.disabled = false; // Enable the save button
+    } else {
+        saveButton.disabled = true; // Disable the save button
+    }
+}
+</script>
