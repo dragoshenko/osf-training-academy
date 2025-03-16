@@ -6,3 +6,63 @@
     </folder>
 
 </library>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="RefArchSharedLibrary">
+<content content-id="globalFooterOne">
+<display-name xml:lang="x-default">The first row of the global footer</display-name>
+<online-flag>true</online-flag>
+<searchable-flag>false</searchable-flag>
+<custom-attributes>
+<custom-attribute attribute-id="body" xml:lang="x-default"><!DOCTYPE html> <html> <head> <style> .footer-containerone { background-color: #0099cc; color: white; padding: 30px 20px; font-family: Arial, sans-serif; } .main-title { text-align: center; font-size: 28px; margin-bottom: 10px; font-weight: bold; } .subtitle { text-align: center; font-size: 22px; margin-bottom: 30px; } .section-title { text-align: center; font-size: 16px; font-weight: bold; margin-bottom: 10px; } .content-columns { display: flex; justify-content: space-between; flex-wrap: wrap; margin: 0 auto; max-width: 1200px; } .column { flex: 0 0 30%; padding: 15px; box-sizing: border-box; margin-bottom: 20px; } .content-text { text-align: justify; line-height: 1.5; } @media (max-width: 768px) { .column { flex: 0 0 100%; } } </style> </head> <body> <div class="footer-containerone"> <div class="main-title">Footer Your Benefits Section</div> <div class="subtitle">Where does it come from?</div> <div class="content-columns"> <div class="column"> <div class="section-title">Where does it come from?</div> <div class="content-text"> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. </div> </div> <div class="column"> <div class="section-title">Where does it come from?</div> <div class="content-text"> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. </div> </div> <div class="column"> <div class="section-title">Where does it come from?</div> <div class="content-text"> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. </div> </div> </div> </div> </body> </html></custom-attribute>
+</custom-attributes>
+<folder-links> </folder-links>
+</content>
+</library>
+
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="RefArchSharedLibrary">
+<content content-id="globalFooterTwo">
+<display-name xml:lang="x-default">The second row of the global footer</display-name>
+<online-flag>true</online-flag>
+<searchable-flag>false</searchable-flag>
+<custom-attributes>
+<custom-attribute attribute-id="body" xml:lang="x-default"><style type="text/css"> .services-container { background-color: #f5f5f5; padding: 30px 20px; font-family: Arial, sans-serif; width: 100%; } .services-row { display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; } .service-column { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 10px; } .service-title { font-size: 22px; margin-bottom: 20px; font-weight: bold; text-align: center; } .trusted-img { max-width: 114px; height: auto; } .payment-img { max-height: 60px; margin: 5px; } .mastercard-img { max-height: 70px; margin: 5px; } .payment-container { display: flex; flex-direction: column; align-items: center; } .payment-row { display: flex; justify-content: center; align-items: center; } /* Updated shipping container to ensure horizontal layout */ .shipping-container { display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 15px; } /* Reduced the height of shipping images to ensure they fit side by side */ .shipping-img { height: 80px; width: auto; max-width: 120px; } @media (max-width: 768px) { .services-row { flex-direction: column; } .service-column { margin-bottom: 30px; } /* Make shipping images stack on mobile if needed */ .shipping-container { flex-direction: column; } } </style> <div class="services-container"> <div class="services-row"> <!-- Trusted Shops Column --> <div class="service-column"> <div class="service-title">Trusted Shops</div> <img alt="Trusted Shops" src="Trusted%20shops.png?$staticlink$" width="114" height="114" /> </div> <!-- Payment Methods Column --> <div class="service-column"> <div class="service-title">Payment Methods</div> <div class="payment-container"> <div class="payment-row"> <img alt="Visa" src="Visa.jpg?$staticlink$" width="154" height="98" /> <img alt="PayPal" src="paypal.png?$staticlink$" width="209" height="105" /> </div> <img alt="MasterCard" src="MasterCard.jpg?$staticlink$" width="161" height="102" /> </div> </div> <!-- Shipping Services Column --> <div class="service-column"> <div class="service-title">Shipping Services</div> <div class="shipping-container"> <img alt="Bike Delivery" src="201610872016-03-314963542BikeDelivery.jpg?$staticlink$" width="140" height="100" /> <img alt="Delivery Service" src="delivery-logo-design_1465-84.jpg?$staticlink$" width="140" height="100" /> </div> </div> </div> </div></custom-attribute>
+</custom-attributes>
+<folder-links> </folder-links>
+</content>
+</library>
+
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="RefArchSharedLibrary">
+<content content-id="globalFooterThree">
+<display-name xml:lang="x-default">The third row of the global footer</display-name>
+<online-flag>true</online-flag>
+<searchable-flag>false</searchable-flag>
+<custom-attributes>
+<custom-attribute attribute-id="body" xml:lang="x-default"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"> <title></title> <style type="text/css">body, html { margin: 0; padding: 0; } .footer { background-color: #0099cc; width: 100%; padding: 30px 0; margin: 0; } .footer-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; padding: 0 20px; } .footer-column { flex: 1; min-width: 200px; margin-bottom: 20px; } .footer-title { font-weight: bold; color: #333; margin-bottom: 15px; } .footer-links { list-style: none; padding: 0; margin: 0; } .footer-links li { margin-bottom: 8px; } .footer-links a { color: #007bff; text-decoration: none; } .footer-links a:hover { text-decoration: underline; } .store-locator-text { font-size: 14px; line-height: 1.5; color: #555; } .copyright { width: 100%; text-align: center; padding: 20px 0; margin-top: 20px; border-top: 1px solid #ddd; font-size: 14px; color: #555; } </style> <footer class="footer"> <div class="footer-content"> <div class="footer-column"> <div class="footer-title">Locate Store</div> <p class="store-locator-text">The Store Locator is designed to help you find the closest store near you.</p> </div> <div class="footer-column"> <div class="footer-title">Account</div> <ul class="footer-links"> <li><a href="https://zzrb-071.dx.commercecloud.salesforce.com/on/demandware.store/Sites-RefArch-Site/en_US/Account-Show"><span style="color:#ffffff;">My Account</span></a></li> <li><a href="https://zzrb-071.dx.commercecloud.salesforce.com/on/demandware.store/Sites-RefArch-Site/en_US/Order-History"><span style="color:#ffffff;">Order History</span></a></li> </ul> </div> <div class="footer-column"> <div class="footer-title">Customer Service</div> <ul class="footer-links"> <li><a href="#"><span style="color:#ffffff;">Contact Us</span></a></li> <li><a href="#"><span style="color:#ffffff;">Gift Certificates</span></a></li> <li><a href="#"><span style="color:#ffffff;">Help</span></a></li> <li><a href="#"><span style="color:#ffffff;">Site Map</span></a></li> </ul> </div> <div class="footer-column"> <div class="footer-title">About</div> <ul class="footer-links"> <li><a href="#"><span style="color:#ffffff;">About Us</span></a></li> <li><a href="#"><span style="color:#ffffff;">Privacy</span></a></li> <li><a href="#"><span style="color:#ffffff;">Terms</span></a></li> <li><a href="#"><span style="color:#ffffff;">Jobs</span></a></li> </ul> </div> </div> </footer></custom-attribute>
+</custom-attributes>
+<folder-links> </folder-links>
+</content>
+</library>
+
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="RefArchSharedLibrary">
+<content content-id="globalFooterFour">
+<display-name xml:lang="x-default">The forth row of the global footer</display-name>
+<online-flag>true</online-flag>
+<searchable-flag>false</searchable-flag>
+<custom-attributes>
+<custom-attribute attribute-id="customCSSFile">globalFooter.css</custom-attribute>
+<custom-attribute attribute-id="body" xml:lang="x-default"><!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Full Width Paragraph</title> <style> body, html { margin: 0; padding: 0; } .full-width-background { background-color: #f5f5f5; width: 100%; padding: 30px 0; margin: 0; } .text-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; } .centered-text { text-align: center; line-height: 1.6; font-family: Arial, sans-serif; color: #333; margin: 0; } </style> </head> <body> <div class="full-width-background"> <div class="text-container"> <p class="centered-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis interdum ipsum, eu iaculis lorem lacinia ac. Fusce cursus odio vel nisl ullamcorper, nec dignissim elit congue. Cras interdum posuere nisi, et scelerisque velit venenatis eu. Proin nec urna sit amet nunc iaculis porttitor. Nulla sollicitudin, sapien a bibendum facilisis, dui erat tincidunt lorem, sit amet egestas ante elit id nulla. Curabitur euismod velit at mi pretium, ac varius velit efficitur. Ut vitae interdum felis.</p> </div> </div> </body> </html></custom-attribute>
+</custom-attributes>
+<folder-links> </folder-links>
+</content>
+</library>
+
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="RefArchSharedLibrary">
+<content content-id="globalFooterFive">
+<display-name xml:lang="x-default">The fifth row of the global footer</display-name>
+<online-flag>true</online-flag>
+<searchable-flag>false</searchable-flag>
+<custom-attributes>
+<custom-attribute attribute-id="body" xml:lang="x-default"><!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Copyright Footer</title> <style> .copyright { width: 100%; text-align: center; padding: 20px 0; margin-top: 20px; border-top: 1px solid #ddd; font-size: 14px; color: #555; background-color: #0099cc; } </style> </head> <body> <div class="copyright"> © 2004-2024 Salesforce. All Rights Reserved. This is a demo store only. Orders made will NOT be processed. </div></custom-attribute>
+</custom-attributes>
+<folder-links> </folder-links>
+</content>
+</library>

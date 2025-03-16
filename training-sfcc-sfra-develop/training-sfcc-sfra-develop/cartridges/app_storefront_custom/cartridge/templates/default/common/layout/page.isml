@@ -22,15 +22,15 @@
             <isinclude template="/components/header/pageHeader" />
             <div role="main" id="maincontent">
                 <isreplace/>
-        
+
+        <div class="globalFooter">
             <isinclude template="/common/layout/globalFooterOne" />
             <isinclude template="/common/layout/globalFooterTwo" />
             <isinclude template="/common/layout/globalFooterThree" />
             <isinclude template="/common/layout/globalFooterFour" />
             <isinclude template="/common/layout/globalFooterFive" />
-
+        </div>
         
-            <isinclude template="/components/footer/pageFooter" />
         </div>
         <div class="error-messaging"></div>
         <div class="modal-background"></div>
