@@ -1,0 +1,130 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/login.css');
+        assets.addCss('/css/switchers.css');
+        assets.addJs('/js/login.js');
+    </isscript>
+
+    <div class="hero slant-down login-banner">
+        <h1 class="page-title">${Resource.msg('header.hero.image.login', 'login', null)}</h1>
+    </div>
+    
+    <div class="container login-page">
+        <!---Breadcrumbs--->
+        <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+        
+        <!-- Image Switchers -->
+        <div class="switcher-container text-center mb-4">
+            <div id="loginSwitcher" class="image-switcher d-inline-block mx-3 active">
+                <isinclude template="account/components/imageSwitcherLogin"/>
+            </div>
+            <div id="checkSwitcher" class="image-switcher d-inline-block mx-3">
+                <isinclude template="account/components/imageSwitcherCheck"/>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center equal-height">
+            <div class="col-sm-8 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- Login Form Container -->
+                        <div id="loginFormContainer">
+                            <div class="login-form-nav">
+                                <isinclude template="account/components/navTabs" />
+                                <div class="tab-content">
+                                    <div class="tab-pane ${pdict.navTabValue === 'login' ? 'active' : ''}" id="login" role="tabpanel" aria-labelledby="login-tab">
+                                        <isinclude template="account/components/loginForm" />
+                                        <isinclude template="account/password/requestPasswordResetModal"/>
+                                        <isinclude template="account/components/oauth" />
+                                    </div>
+                                    <div class="tab-pane ${pdict.navTabValue === 'register' ? 'active' : ''}" id="register" role="tabpanel" aria-labelledby="register-tab">
+                                        <isinclude template="account/components/registerForm" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Track Order Form Container -->
+                        <div id="trackOrderFormContainer" style="display: none;">
+                            <isinclude template="account/components/trackOrderForm" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+    .switcher-container {
+    display: flex;
+    justify-content: center; /* Centers the switchers horizontally */
+    align-items: center; /* Centers the switchers vertically if needed */
+    margin: 20px 0;
+    }
+
+    .image-switcher {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    }
+
+    .image-switcher img {
+    cursor: pointer;
+    max-width: 100%;
+    filter: grayscale(100%); /* Apply grayscale filter */
+    transition: filter 0.3s ease; /* Smooth transition for filter */
+    }
+
+    .image-switcher.active img {
+    filter: none; /* Remove grayscale filter when active */
+    }
+
+    .image-switcher.active {
+    border-bottom-color: #0070d2;
+    }
+    </style>
+</isdecorate>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Make sure jQuery is loaded
+        if (typeof jQuery !== 'undefined') {
+            // Set default state
+            $("#loginFormContainer").show();
+            $("#trackOrderFormContainer").hide();
+            $("#loginSwitcher").addClass("active");
+            $("#checkSwitcher").removeClass("active");
+            
+            // Handle login switcher click
+            $("#loginSwitcher").on("click", function() {
+                console.log("Login switcher clicked");
+                $(".image-switcher").removeClass("active");
+                $(this).addClass("active");
+                $("#loginFormContainer").show();
+                $("#trackOrderFormContainer").hide();
+            });
+            
+            // Handle check/track order switcher click
+            $("#checkSwitcher").on("click", function() {
+                console.log("Check switcher clicked");
+                $(".image-switcher").removeClass("active");
+                $(this).addClass("active");
+                $("#loginFormContainer").hide();
+                $("#trackOrderFormContainer").show();
+            });
+            
+            // Also make the images themselves clickable
+            $("#loginSwitcher img").on("click", function() {
+                $("#loginSwitcher").trigger("click");
+            });
+            
+            $("#checkSwitcher img").on("click", function() {
+                $("#checkSwitcher").trigger("click");
+            });
+        } else {
+            console.error("jQuery is not loaded!");
+        }
+    });
+</script>

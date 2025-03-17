@@ -6,3 +6,27 @@
     </folder>
 
 </library>
+
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="RefArchSharedLibrary">
+<content content-id="imageSwitcherLogin">
+<display-name xml:lang="x-default">Click on this image for login</display-name>
+<online-flag>true</online-flag>
+<searchable-flag>false</searchable-flag>
+<custom-attributes>
+<custom-attribute attribute-id="body" xml:lang="x-default"><p><img alt="" height="160" src="6681204.png?$staticlink$" title="" width="160" /></p></custom-attribute>
+</custom-attributes>
+<folder-links> </folder-links>
+</content>
+</library>
+
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="RefArchSharedLibrary">
+<content content-id="imageSwitcherCheck">
+<display-name xml:lang="x-default">Click on this image for check status</display-name>
+<online-flag>true</online-flag>
+<searchable-flag>false</searchable-flag>
+<custom-attributes>
+<custom-attribute attribute-id="body" xml:lang="x-default"><style type="text/css">/* Centering styles */ .paypal-container { width: 100%; text-align: center; margin: 0 auto; } .paypal-wrapper { display: inline-block; margin: 0 auto; } /* Alternative flexbox method */ .flex-container { display: flex; justify-content: center; align-items: center; width: 100%; margin-top: 20px; /* Space between the two examples */ } .flex-wrapper { margin: 0; } </style> <div class="paypal-container"> <p class="paypal-wrapper"><img alt="PayPal" height="160" src="6735447.png?$staticlink$" title="PayPal" width="160" /></p> </div></custom-attribute>
+</custom-attributes>
+<folder-links> </folder-links>
+</content>
+</library>
