@@ -1,0 +1,15 @@
+#charCount {
+    font-size: 12px;
+    color: gray;
+}
+
+#scrollTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
