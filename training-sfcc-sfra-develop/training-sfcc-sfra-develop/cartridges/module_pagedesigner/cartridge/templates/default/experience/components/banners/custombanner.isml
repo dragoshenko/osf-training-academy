@@ -1,0 +1,5 @@
+<isdecorate template="experience/components/commerce_assets/banner">
+    <a href="${categoryUrl}" class="custom-banner">
+        <img src="${imageUrl}" alt="Banner Image" />
+    </a>
+</isdecorate>

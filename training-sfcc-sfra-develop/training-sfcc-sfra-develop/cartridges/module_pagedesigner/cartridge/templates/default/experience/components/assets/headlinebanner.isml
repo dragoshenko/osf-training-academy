@@ -1,21 +1,23 @@
 <isscript>
     var assets = require('*/cartridge/scripts/assets.js');
-    assets.addCss('/css/headlinebanner.css');
-    assets.addCss('/css/component.css');
+    assets.addCss('/css/custombanner.css');
 </isscript>
-<figure class="component-figure">
-    <picture>
-        <source srcset="${pdict.image.src.desktop}" media="(min-width: 768px)"/>
-        <img class="component-image" src="${pdict.image.src.mobile}" style="--focal-point-x:${pdict.image.focalPointX}; --focal-point-y:${pdict.image.focalPointY}" <isif condition="${pdict.image.alt}">alt="${pdict.image.alt}" title="${pdict.image.alt}"</isif> />
-    </picture>
-    <figcaption class="headlinebanner-text_container" style="text-align: left">
-        <div class="headlinebanner-text headlinebanner-text_heading">
-            <span class="headlinebanner-wrap"><isprint value="${pdict.text_headline}" encoding="off"/></span>
+
+<figure class="custom-banner-figure">
+    <a href="${categoryUrl}" class="custom-banner-link">
+        <picture>
+            <source srcset="${pdict.image.src.desktop}" media="(min-width: 768px)"/>
+            <img class="custom-banner-image" src="${pdict.image.src.mobile}" alt="Banner Image" />
+        </picture>
+    </a>
+    <figcaption class="custom-banner-text_container" style="text-align: left">
+        <div class="custom-banner-text custom-banner-text_heading">
+            <span class="custom-banner-wrap"><isprint value="${pdict.text_headline}" encoding="off"/></span>
         </div>
 
         <isif condition="${pdict.text_subline}">
-            <div class="headlinebanner-text headlinebanner-text_subheading">
-                <span class="headlinebanner-wrap"><isprint value="${pdict.text_subline}" encoding="off"/></span>
+            <div class="custom-banner-text custom-banner-text_subheading">
+                <span class="custom-banner-wrap"><isprint value="${pdict.text_subline}" encoding="off"/></span>
             </div>
         </isif>
     </figcaption>

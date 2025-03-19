@@ -1,0 +1,18 @@
+{
+    "template": "experience/components/<folder>/custombanner",
+    "type": "component",
+    "group": "commerce_assets",
+    "label": "Custom Banner",
+    "attributes": {
+        "image": {
+            "type": "image",
+            "label": "Banner Image",
+            "default": "/images/default-banner.jpg"
+        },
+        "category": {
+            "type": "category",
+            "label": "Category",
+            "default": ""
+        }
+    }
+}
