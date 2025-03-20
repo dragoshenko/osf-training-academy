@@ -1,0 +1,5 @@
+<link rel="stylesheet" type="text/css" href="${URLUtils.staticURL('/static/css/globalFooter.css')}" />
+        <div>
+            <isinclude template="/components/modules" sf-toolkit="off" />
+            <iscontentasset aid="globalFooterFour"/>
+        </div>
