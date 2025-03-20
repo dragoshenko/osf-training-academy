@@ -1,0 +1,44 @@
+/* banner.css */
+
+/* Container for the banner */
+.homepage-banner {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+/* Image styling */
+.homepage-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Text overlay */
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2em;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Responsive text size */
+@media (max-width: 768px) {
+    .banner-text {
+        font-size: 1.5em;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-text {
+        font-size: 1.2em;
+        padding: 6px;
+    }
+}
