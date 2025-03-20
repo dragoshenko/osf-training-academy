@@ -1,0 +1,28 @@
+   .switcher-container {
+    display: flex;
+    justify-content: center; /* Centers the switchers horizontally */
+    align-items: center; /* Centers the switchers vertically if needed */
+    margin: 20px 0;
+    }
+
+    .image-switcher {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    }
+
+    .image-switcher img {
+    cursor: pointer;
+    max-width: 100%;
+    filter: grayscale(100%); /* Apply grayscale filter */
+    transition: filter 0.3s ease; /* Smooth transition for filter */
+    }
+
+    .image-switcher.active img {
+    filter: none; /* Remove grayscale filter when active */
+    }
+
+    .image-switcher.active {
+    border-bottom-color: #0070d2;
+    }
