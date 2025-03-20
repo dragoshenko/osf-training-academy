@@ -143,24 +143,23 @@ server.get('ShowAjax', cache.applyShortPromotionSensitiveCache, consentTracking.
  * @param {renders} - isml
  * @param {serverfunction} - get
  */
-var PageMgr = require('dw/experience/PageMgr');
-var CatalogMgr = require('dw/catalog/CatalogMgr');
-
 server.get('Show', cache.applyShortPromotionSensitiveCache, consentTracking.consent, function (req, res, next) {
-    var catId = req.querystring.cgid;
-    var category = CatalogMgr.getCategory(catId);
-    var pageDesignerID = (category && 'pageDesignerPageID' in category.custom) ? category.custom.pageDesignerPageID : null;
-    var pageDesigner = pageDesignerID ? PageMgr.getPage(pageDesignerID) : null;
-
+    var PageMgr = require('dw/experience/PageMgr');
+    
+    // Use the provided Page Designer ID
+    var pageDesignerID = 'my-page-designer-page';
+    var pageDesigner = PageMgr.getPage(pageDesignerID);
+    
     if (pageDesigner && pageDesigner.isVisible()) {
-        // Render the Page Designer page directly
-        res.render(PageMgr.renderPage(pageDesigner.ID, ''));
+        // Render the Page Designer page
+        res.print(PageMgr.renderPage(pageDesigner.ID, ''));
         return next();
     }
 
+    // Fallback logic if the Page Designer page is not visible or does not exist
+    // You can add your existing search logic here if needed
 
-
-    return next();
+    next();
 }, pageMetaData.computedPageMetaData);
 
 /**
