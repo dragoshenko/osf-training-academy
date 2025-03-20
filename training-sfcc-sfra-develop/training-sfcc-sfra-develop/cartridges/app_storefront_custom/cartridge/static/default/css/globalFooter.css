@@ -1,0 +1,7 @@
+.centered-paragraph {
+    background-color: grey;
+    padding: 20px;
+    text-align: center;
+    margin: 0 auto; /* Center the block element horizontally */
+    display: inline-block; /* Shrink the div to fit the content */
+}
