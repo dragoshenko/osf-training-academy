@@ -1,0 +1,6 @@
+<isinclude template="/components/modules" sf-toolkit="off" />
+<isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addCss('/css/sizeGuideTableStyle.css');
+    </isscript>
+<iscontentasset aid="sizeTable"/>
