@@ -1,14 +1,29 @@
 'use strict';
 
-var ImageTransformation = require('*/cartridge/experience/utilities/ImageTransformation');
+var Template = require('dw/util/Template');
+var HashMap = require('dw/util/HashMap');
+var ImageTransformation = require('~/cartridge/experience/utilities/ImageTransformation.js');
 
-module.exports = function (context) {
+/**
+ * Render logic for the assets.imagebanner.
+ */
+module.exports.render = function (context) {
+    var model = new HashMap();
     var content = context.content;
-    var category = content.category ? content.category.ID : null;
-    var imageUrl = ImageTransformation.url(content.image);
 
-    return {
-        imageUrl: imageUrl,
-        categoryUrl: category ? dw.catalog.CatalogMgr.getCategory(category).getOnlineURL() : '#'
-    };
+    if (content.image) {
+        model.image = {
+            src: {
+                mobile  : ImageTransformation.url(content.image, { device: 'mobile' }),
+                desktop : ImageTransformation.url(content.image, { device: 'desktop' })
+            },
+            alt: content.image.file.getAlt()
+        };
+    }
+
+    if (content.category) {
+        model.categoryUrl = content.category.URL;
+    }
+
+    return new Template('experience/components/banners/custombanner').render(model).text;
 };

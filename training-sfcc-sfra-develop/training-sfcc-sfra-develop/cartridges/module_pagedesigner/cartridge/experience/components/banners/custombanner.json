@@ -1,18 +1,34 @@
 {
-    "template": "experience/components/<folder>/custombanner",
-    "type": "component",
-    "group": "commerce_assets",
-    "label": "Custom Banner",
-    "attributes": {
-        "image": {
+    "name": "Custom Banner",
+    "description": "An image banner that links to a category.",
+    "group": "banners",
+    "attribute_definition_groups": [
+      {
+        "id": "background",
+        "name": "Banner Image",
+        "description": "The visual display of the banner image.",
+        "attribute_definitions": [
+          {
+            "id": "image",
+            "name": "Image",
             "type": "image",
-            "label": "Banner Image",
-            "default": "/images/default-banner.jpg"
-        },
-        "category": {
+            "required": true
+          }
+        ]
+      },
+      {
+        "id": "link",
+        "name": "Shop Now Link",
+        "description": "The category link for the banner.",
+        "attribute_definitions": [
+          {
+            "id": "category",
+            "name": "Category Link",
             "type": "category",
-            "label": "Category",
-            "default": ""
-        }
-    }
-}
+            "required": true
+          }
+        ]
+      }
+    ],
+    "region_definitions": []
+  }

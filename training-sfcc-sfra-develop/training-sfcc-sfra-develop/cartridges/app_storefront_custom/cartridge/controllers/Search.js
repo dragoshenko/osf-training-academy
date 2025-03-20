@@ -153,15 +153,12 @@ server.get('Show', cache.applyShortPromotionSensitiveCache, consentTracking.cons
     var pageDesigner = pageDesignerID ? PageMgr.getPage(pageDesignerID) : null;
 
     if (pageDesigner && pageDesigner.isVisible()) {
-        res.writer.println(PageMgr.renderPage(pageDesigner.ID, ''));
+        // Render the Page Designer page directly
+        res.render(PageMgr.renderPage(pageDesigner.ID, ''));
         return next();
     }
 
-    // If no Page Designer page is available, you can choose to handle it differently,
-    // such as rendering a default message or redirecting to another page.
-    res.render('error/noPageDesignerPage', {
-        message: 'No Page Designer page is available for this category.'
-    });
+
 
     return next();
 }, pageMetaData.computedPageMetaData);
