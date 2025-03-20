@@ -1,0 +1,19 @@
+{
+    "name": "Wayfinder Layout",
+    "description": "A layout that can list up to four Page Designer Assets.",
+    "group": "layouts",
+    "attribute_definition_groups": [],
+    "region_definitions": [
+      {
+        "id": "wayfinderRegion",
+        "name": "Wayfinder Region",
+        "description": "Region to hold Wayfinder Assets",
+        "component_definitions": [
+          {
+            "id": "wayfinderAsset",
+            "max_instances": 4
+          }
+        ]
+      }
+    ]
+  }

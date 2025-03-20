@@ -1,0 +1,8 @@
+<div class="wayfinder-asset">
+    <a href="${content.category.url}">
+        <img src="${content.image.url}" alt="${content.title}" />
+    </a>
+    <div class="wayfinder-title">
+        ${content.title}
+    </div>
+</div>

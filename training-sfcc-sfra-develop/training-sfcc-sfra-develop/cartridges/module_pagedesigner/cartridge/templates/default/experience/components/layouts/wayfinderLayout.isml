@@ -1,0 +1,9 @@
+<isdecorate template="experience/components/layouts/base">
+    <isreplace name="layout">
+        <div class="wayfinder-layout">
+            <isloop items="${content}" var="asset">
+                <isinclude template="experience/components/assets/wayfinderAsset" />
+            </isloop>
+        </div>
+    </isreplace>
+</isdecorate>
