@@ -1,0 +1,24 @@
+/* Bold wayfinder title */
+.wayfinder-title-text {
+    font-weight: bold;
+}
+
+/* Resize wayfinder images to 500x500 */
+.wayfinder-image {
+    width: 500px;
+    height: 500px;
+    object-fit: cover; /* This ensures the image maintains its aspect ratio and fills the space */
+}
+
+/* Make sure the container accommodates the new image size */
+.wayfinder-asset {
+    width: 500px;
+    margin: 0 auto; /* Centers the container if needed */
+}
+
+/* Ensure the link container also respects the dimensions */
+.wayfinder-link {
+    display: block;
+    width: 500px;
+    height: 500px;
+}

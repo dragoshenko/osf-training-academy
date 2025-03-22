@@ -1,0 +1,33 @@
+{
+    "name": "Wayfinder Asset",
+    "description": "An asset that includes an image, a clickable category, and a title.",
+    "group": "assets",
+    "attribute_definition_groups": [
+      {
+        "id": "wayfinderContent",
+        "name": "Wayfinder Content",
+        "description": "The content to show in this component",
+        "attribute_definitions": [
+          {
+            "id": "image",
+            "name": "Image",
+            "type": "image",
+            "required": true
+          },
+          {
+            "id": "category",
+            "name": "Category",
+            "type": "category",
+            "required": true
+          },
+          {
+            "id": "title",
+            "name": "Title",
+            "type": "string",
+            "required": true
+          }
+        ]
+      }
+    ],
+    "region_definitions": []
+  }

@@ -1,0 +1,49 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/pagedesigner-bootstrap.min.css');
+</isscript>
+
+<style>
+    /* Bold wayfinder title */
+    .wayfinder-title-text {
+        font-weight: bold;
+    }
+
+    /* Resize wayfinder images to 500x500 */
+    .wayfinder-image {
+        width: 250px;
+        height: 250px;
+        object-fit: cover; /* This ensures the image maintains its aspect ratio and fills the space */
+    }
+
+    /* Make sure the container accommodates the new image size */
+    .wayfinder-asset {
+        width: 250px;
+        margin: 0 auto; /* Centers the container if needed */
+    }
+
+    /* Ensure the link container also respects the dimensions */
+    .wayfinder-link {
+        display: block;
+        width: 250px;
+        height: 250px;
+    }
+</style>
+
+<isif condition="${pdict.text_headline}">
+    <div class="wayfinderlayout-text_container wayfinderlayout-text_heading">
+        <span class="wayfinderlayout-text"><isprint value="${pdict.text_headline}" encoding="off"/></span>
+    </div>
+</isif>
+
+<div class="wayfinder-asset">
+    <a href="${pdict.categoryUrl}" class="wayfinder-link">
+        <picture>
+            <source srcset="${pdict.image.src.desktop}" media="(min-width: 768px)"/>
+            <img class="wayfinder-image" src="${pdict.image.src.mobile}" alt="${pdict.image.alt}" />
+        </picture>
+    </a>
+    <div class="wayfinder-title">
+        <span class="wayfinder-title-text"><isprint value="${pdict.title}" encoding="off"/></span>
+    </div>
+</div>
