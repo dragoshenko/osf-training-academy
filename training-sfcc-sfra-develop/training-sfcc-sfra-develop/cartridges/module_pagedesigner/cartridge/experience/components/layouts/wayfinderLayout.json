@@ -1,19 +1,32 @@
 {
-    "name": "Wayfinder Layout",
-    "description": "A layout that can list up to four Page Designer Assets.",
-    "group": "layouts",
-    "attribute_definition_groups": [],
-    "region_definitions": [
+  "name": "Wayfinder Layout",
+  "group": "layouts",
+  "attribute_definition_groups": [
+    {
+      "id": "heading",
+      "attribute_definitions": [
+        {
+          "id": "text_headline",
+          "name": "Heading",
+          "type": "string",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": [
       {
-        "id": "wayfinderRegion",
-        "name": "Wayfinder Region",
-        "description": "Region to hold Wayfinder Assets",
-        "component_definitions": [
-          {
-            "id": "wayfinderAsset",
-            "max_instances": 4
-          }
+        "id":"components",
+        "name":"Components",
+        "max_components":4,
+        "component_type_exclusions": [
+          { "type_id": "layouts.1column" },
+          { "type_id": "layouts.2column" },
+          { "type_id": "layouts.3column" },
+          { "type_id": "layouts.4column" },
+          { "type_id": "layouts.gridcomponentlayout" },
+          { "type_id": "einstein.noanchorgrid" }
         ]
       }
-    ]
-  }
+  ]
+}

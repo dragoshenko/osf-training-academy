@@ -1,9 +1,61 @@
-<isdecorate template="experience/components/layouts/base">
-    <isreplace name="layout">
-        <div class="wayfinder-layout">
-            <isloop items="${content}" var="asset">
-                <isinclude template="experience/components/assets/wayfinderAsset" />
-            </isloop>
-        </div>
-    </isreplace>
-</isdecorate>
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/layout.css');
+    assets.addCss('/css/pagedesigner-bootstrap.min.css');
+</isscript>
+
+<style>
+    /* Container for the entire layout */
+    .wayfinderlayout-container {
+        width: 100%;
+        padding: 16px;
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    /* Text container styling */
+    .wayfinderlayout-text_container {
+        margin-bottom: 16px;
+        text-align: center;
+    }
+
+    /* Text heading styling */
+    .wayfinderlayout-text_heading {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #333;
+    }
+
+
+    /* Add hover effect for components */
+    .wayfinderlayout-component:hover {
+        transform: scale(1.05);
+    }
+
+    /* Image styling within components */
+    .wayfinderlayout-component img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 767px) {
+        .wayfinderlayout-component {
+            flex: 1 1 calc(50% - 16px); /* Two components per row on smaller screens */
+            max-width: calc(50% - 16px);
+        }
+    }
+</style>
+
+<isif condition="${pdict.text_headline}">
+    <div class="wayfinderlayout-text_container wayfinderlayout-text_heading">
+        <span class="wayfinderlayout-text"><isprint value="${pdict.text_headline}"/></span>
+    </div>
+</isif>
+
+<div class="region wayfinderlayout-container col-12 col-md-12 px-2">
+    <isprint value="${pdict.regions.components.setClassName('wayfinderlayout-region row mx-0').setComponentClassName('wayfinderlayout-component col-6 col-md-3 px-2').render()}" encoding="off"/>
+</div>
