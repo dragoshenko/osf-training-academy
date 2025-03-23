@@ -7,17 +7,23 @@
     <isinclude template="product/components/productTileImage" />
 
         <div class="product-badge" style="
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            padding: 10px;
-            border-radius: 5px; 
-            background-color: ${pdict.product.custom.backgroundColor || '#defaultColor'}; 
-            color: ${pdict.product.custom.textColor || '#defaultTextColor'}; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center;">
-            ${pdict.product.custom.textAttribute || 'Default Text'}
+        position: absolute;
+        top: -35px; /* Adjust based on new size */
+        left: -35px; /* Adjust based on new size */
+        width: 70px; /* New width for larger circle */
+        height: 70px; /* New height for larger circle */
+        border-radius: 50%; /* Keeps the badge a circle */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem; /* Adjust font size if needed */
+        font-weight: bold;
+        z-index: 10;
+        background-color: rgb(210, 0, 0); /* Default background color */
+        color: #FFFFFF; /* Default text color */
+        ">
+        Custom Badge
+        <!--${pdict.product.custom.textAttribute || 'Default Text'} -->
         </div>
     <div class="tile-body">
         <isif condition="${pdict.display.swatches !== false}">
