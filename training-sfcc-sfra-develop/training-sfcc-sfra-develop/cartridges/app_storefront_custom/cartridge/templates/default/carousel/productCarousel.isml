@@ -1,13 +1,14 @@
-<link rel="stylesheet" type="text/css" href="${URLUtils.staticURL('/css/carousel.css')}" />
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="slick/slick.min.js"></script>
 
 <script>
     $(document).ready(function(){
         console.log("Initializing Slick Carousel");
         $('.product-list').slick({
+            infinite : true,
             slidesToShow: 2,
             slidesToScroll: 1,
             responsive: [
