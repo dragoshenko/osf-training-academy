@@ -1,43 +1,43 @@
 {
-  "name": "Product Listing",
-  "description": "Image, text overlay, 'Shop Now' control that links user to a product detail page; Image is defined by the selected product",
-  "group": "assets",
+  "name": "Product List Component",
+  "description": "Displays a list of products based on category or product IDs.",
+  "group": "layouts",
   "attribute_definition_groups": [
     {
-      "id": "product_spec",
-      "name": "Product Specifications",
-      "description": "Specify the product to be displayed from this product tile.",
+      "id": "productSelection",
       "attribute_definitions": [
+
         {
-          "id": "product",
-          "name": "Product",
-	  "description": "Select the product SKU to be displayed.",
-          "type": "product",
-          "required": true
-        },
-        {
-          "id": "text_headline",
-          "name": "Product Name",
-	  "description": "The text overlay to be displayed. If nothing is entered the product name will be displayed.",
+          "id": "productIds",
+          "name": "Product IDs",
           "type": "string",
+          "description": "Enter a comma-separated list of product IDs.",
+          "required": false
+        },
+
+        {
+          "id": "category",
+          "name": "Category",
+          "type": "category",
           "required": false
         }
-      ]
-    },
-    {
-      "id": "button_spec",
-      "name": "Button Specification",
-      "description": "Specify the link for the 'Show Now' button.",
-      "attribute_definitions": [
-        {
-          "id": "shop_now_target",
-          "name": "Link",
-          "description": "Optional specification for the link to where the user will be directed. If nothing is specified, the link to product SKU selected will be used.",
-          "type": "url",
-          "required": false
-	}
+        
       ]
     }
   ],
-  "region_definitions": []
+  "region_definitions": [
+    {
+      "id": "productListRegion",
+      "name": "Product List Region",
+      "max_components": 1,
+      "component_type_exclusions": [
+        { "type_id": "layouts.1column" },
+        { "type_id": "layouts.2column" },
+        { "type_id": "layouts.3column" },
+        { "type_id": "layouts.4column" },
+        { "type_id": "layouts.gridcomponentlayout" },
+        { "type_id": "einstein.noanchorgrid" }
+      ]
+    }
+  ]
 }

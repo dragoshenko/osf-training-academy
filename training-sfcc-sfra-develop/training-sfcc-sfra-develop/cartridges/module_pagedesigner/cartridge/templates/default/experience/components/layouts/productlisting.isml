@@ -3,19 +3,29 @@
     assets.addCss('/css/producttile.css');
     assets.addCss('/css/component.css');
 </isscript>
-<figure class="component-figure product_centered-text">
-    <picture>
-        <isif condition="${pdict.image}">
-            <img class="component-image" src="${pdict.image.src}" <isif condition="${pdict.image.alt}">alt="${pdict.image.alt}" title="${pdict.image.alt}"</isif> />
-        </isif>
-    </picture>
-    <figcaption class="product-text_container">
-        <div>
-            <span class="product-text"><isprint value="${pdict.text_headline}"/></span>
-        </div>
-        <div>
-            <a class="producttile-button" href="${pdict.url}">${Resource.msg('button.shop_now', 'producttile', 'Shop Now')}</a>
-        </div>
-    </figcaption>
-</figure>
 
+<isloop items="${products}" var="product">
+    <div class="product-tile">
+        <!-- dwMarker="product" dwContentID="${product.ID}" -->
+        <isinclude template="product/components/productTileImage" />
+        <div class="tile-body">
+            <isif condition="${pdict.display.swatches !== false}">
+                <isinclude template="product/components/productTileSwatch" />
+            </isif>
+
+            <isinclude template="product/components/productTileName" />
+
+            <isset name="price" value="${product.priceModel.price}" scope="page" />
+            <isif condition="${product.productType === 'set'}">
+                <isinclude template="product/components/pricing/setPrice" />
+            <iselse>
+                <isinclude template="product/components/pricing/main" />
+            </isif>
+
+            <isif condition="${pdict.display.ratings !== false}">
+                <isinclude template="product/productTileFooter" />
+            </isif>
+        </div>
+        <!-- END_dwmarker -->
+    </div>
+</isloop>
