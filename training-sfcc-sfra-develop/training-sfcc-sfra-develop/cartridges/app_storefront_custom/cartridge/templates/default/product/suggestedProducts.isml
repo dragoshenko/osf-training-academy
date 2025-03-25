@@ -1,33 +1,9 @@
-<link rel="stylesheet" type="text/css" href="${URLUtils.staticURL('/css/detail.css')}" />
-<div class="product-tile-container">
-    <isloop items="${pdict.suggestedProducts}" var="suggestedProduct">
-        <div class="product-tile">
-            <!-- dwMarker="product" dwContentID="${suggestedProduct.uuid}" -->
-            <img src="${suggestedProduct.imageURL}" alt="${suggestedProduct.name}" />
-
-            <div class="tile-body">
-                <h3>
-                    <a href="${suggestedProduct.url}">${suggestedProduct.name}</a>
-                </h3>
-
-                <isif condition="${pdict.display.swatches !== false}">
-                    <isinclude template="product/components/productTileSwatch" context="suggestedProduct" />
-                </isif>
-
-                
-
-                <isset name="price" value="${suggestedProduct.price}" scope="page" />
-                <isif condition="${suggestedProduct.productType === 'set'}">
-                    <isinclude template="product/components/pricing/setPrice" context="suggestedProduct" />
-                <iselse>
-                    <isinclude template="product/components/pricing/main" context="suggestedProduct" />
-                </isif>
-
-                <isif condition="${pdict.display.ratings !== false}">
-                    <isinclude template="product/productTileFooter" context="suggestedProduct" />
-                </isif>
-            </div>
-            <!-- END_dwmarker -->
-        </div>
-    </isloop>
-</div>
+<table class="product-table">
+    <tr>
+        <isloop items="${pdict.suggestedProducts}" var="product">
+            <td>
+                <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.ID, 'swatches', true, 'ratings', true)}" />
+            </td>
+        </isloop>
+    </tr>
+</table>
