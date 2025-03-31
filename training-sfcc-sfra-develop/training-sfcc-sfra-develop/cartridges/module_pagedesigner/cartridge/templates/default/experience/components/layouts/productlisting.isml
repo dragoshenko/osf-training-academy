@@ -1,0 +1,14 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/experience/components/commerceAssets/productList.css');
+</isscript>
+
+<table class="product-table">
+    <tr>
+        <isloop items="${pdict.products}" var="productItem">
+            <td>
+                <isinclude url="${URLUtils.url('Tile-Show', 'pid', productItem.product.ID, 'swatches', true, 'ratings', true)}" />
+            </td>
+        </isloop>
+    </tr>
+</table>

@@ -1,0 +1,29 @@
+{
+  "name": "Product Listing Component",
+  "description": "This component displays a list of products based on product IDs or a category.",
+  "group": "layouts",
+  "attribute_definition_groups": [
+      {
+          "id": "productListSpec",
+          "name": "Product List Specification",
+          "description": "Specify the list of product SKUs or a category.",
+          "attribute_definitions": [
+              {
+                  "id": "productIDs",
+                  "name": "Product IDs",
+                  "description": "Array of product SKUs in JSON format.",
+                  "type": "string",
+                  "required": false
+              },
+              {
+                  "id": "category",
+                  "name": "Category",
+                  "description": "Category ID to fetch products from.",
+                  "type": "category",
+                  "required": false
+              }
+          ]
+      }
+  ],
+  "region_definitions": []
+}
