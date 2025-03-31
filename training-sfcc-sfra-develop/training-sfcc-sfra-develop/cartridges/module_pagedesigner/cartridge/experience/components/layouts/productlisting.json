@@ -1,43 +1,29 @@
 {
-  "name": "Product List Component",
-  "description": "Displays a list of products based on category or product IDs.",
+  "name": "Product Listing Component",
+  "description": "This component displays a list of products based on product IDs or a category.",
   "group": "layouts",
   "attribute_definition_groups": [
-    {
-      "id": "productSelection",
-      "attribute_definitions": [
-
-        {
-          "id": "productIds",
-          "name": "Product IDs",
-          "type": "string",
-          "description": "Enter a comma-separated list of product IDs.",
-          "required": false
-        },
-
-        {
-          "id": "category",
-          "name": "Category",
-          "type": "category",
-          "required": false
-        }
-        
-      ]
-    }
+      {
+          "id": "productListSpec",
+          "name": "Product List Specification",
+          "description": "Specify the list of product SKUs or a category.",
+          "attribute_definitions": [
+              {
+                  "id": "productIDs",
+                  "name": "Product IDs",
+                  "description": "Array of product SKUs in JSON format.",
+                  "type": "string",
+                  "required": false
+              },
+              {
+                  "id": "category",
+                  "name": "Category",
+                  "description": "Category ID to fetch products from.",
+                  "type": "category",
+                  "required": false
+              }
+          ]
+      }
   ],
-  "region_definitions": [
-    {
-      "id": "productListRegion",
-      "name": "Product List Region",
-      "max_components": 1,
-      "component_type_exclusions": [
-        { "type_id": "layouts.1column" },
-        { "type_id": "layouts.2column" },
-        { "type_id": "layouts.3column" },
-        { "type_id": "layouts.4column" },
-        { "type_id": "layouts.gridcomponentlayout" },
-        { "type_id": "einstein.noanchorgrid" }
-      ]
-    }
-  ]
+  "region_definitions": []
 }
